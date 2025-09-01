@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Ticker } from "@/utils/types";
 import { getTicker } from "@/utils/httpClients";
 import { SignalingManager } from "@/utils/SignalingManager";

@@ -3,12 +3,10 @@ import AsksTable from "./AsksTable";
 import BidsTable from "./BidsTable";
 import TradesTable from "../trades/TradesTable";
 import { SignalingManager } from "@/utils/SignalingManager";
-import { Trade } from "@/utils/types";
 import { getDepth, getTicker, getTrades } from "@/utils/httpClients";
 
 export function Depth({ market, isOpen }: { market: string; isOpen: any }) {
-  // get Depth function -> askstable, bidstable
-  // get trades
+
   const [asks, setAsks] = useState<[string, string][]>();
   const [bids, setBids] = useState<[string, string][]>();
   const [price, setPrice] = useState<string>();

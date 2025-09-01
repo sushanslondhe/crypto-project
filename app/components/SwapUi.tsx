@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 
 export function SwapUI({ market }: { market: string }) {
-  const [amount, setAmount] = useState("");
   const [activeTab, setActiveTab] = useState("buy");
   const [type, setType] = useState("limit");
 
@@ -23,6 +21,7 @@ export function SwapUI({ market }: { market: string }) {
           </div>
           <div className="flex flex-col px-3">
             <div className="flex flex-col flex-1 gap-3 text-baseTextHighEmphasis">
+              {market}
               <div className="flex flex-col gap-3">
                 <div className="flex items-center justify-between flex-row">
                   <p className="text-xs font-normal text-baseTextMedEmphasis">
@@ -121,7 +120,7 @@ export function SwapUI({ market }: { market: string }) {
   );
 }
 
-function LimitButton({ type, setType }: { type: string; setType: any }) {
+function LimitButton({ type, setType }: { type: string; setType:(type: string) => void }) {
   return (
     <div
       className="flex flex-col cursor-pointer justify-center py-2"

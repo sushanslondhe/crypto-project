@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpDown, TrendingUp, TrendingDown, BarChart3 } from "lucide-react";
 import { Ticker } from "@/utils/types";
-import { getTicker, getTickers } from "@/utils/httpClients";
+import {  getTickers } from "@/utils/httpClients";
 import Link from "next/link";
 
 
@@ -16,7 +16,6 @@ const CryptoTable = () => {
 
 
   useEffect(() => {
-    // setCryptoData(mockData);
 
     getTickers().then((data) => {
       setCryptoData(data);

@@ -22,7 +22,9 @@ export function TradeView({
         Math.floor((new Date().getTime() - 1000 * 60 * 60 * 24 * 7) / 1000),
         Math.floor(new Date().getTime() / 1000)
       );
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
 
     if (chartRef) {
       if (chartManagerRef.current) {
@@ -44,7 +46,7 @@ export function TradeView({
           color: "white",
         }
       );
-      //@ts-ignore
+  
       chartManagerRef.current = chartManager;
     }
   };

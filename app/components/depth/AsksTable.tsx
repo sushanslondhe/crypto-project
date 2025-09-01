@@ -1,11 +1,11 @@
 export default function AsksTable({ asks }: { asks: [string, string][] }) {
   let currTotal = 0;
-  let relAsks = asks.slice(0, 20);
+  const relAsks = asks.slice(0, 20);
 
   // console.log(relAsks);
   relAsks.reverse();
 
-  let asksWithTotal: [string, string, number][] = [];
+  const asksWithTotal: [string, string, number][] = [];
   for (let i = relAsks.length - 1; i >= 0; i--) {
     const [price, quantity] = relAsks[i];
     asksWithTotal.push([price, quantity, (currTotal += Number(quantity))]);
