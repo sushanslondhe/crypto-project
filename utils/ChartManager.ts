@@ -61,7 +61,13 @@ export class ChartManager {
       },
     });
     this.chart = chart;
-    this.candleSeries = chart.addCandlestickSeries();
+    this.candleSeries = chart.addCandlestickSeries({
+      upColor: layout.color,
+      downColor: layout.color,
+      borderVisible: false,
+      wickUpColor: layout.color,
+      wickDownColor: layout.color,
+    });
 
     this.candleSeries.setData(
       initialData.map((data) => ({

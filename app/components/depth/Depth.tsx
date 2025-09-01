@@ -51,7 +51,7 @@ export function Depth({ market, isOpen }: { market: string; isOpen: any }) {
     );
     SignalingManager.getInstance().registerCallback(
       "trade",
-      (data: Partial<Trade>) =>
+      (data: any) =>
         setTrades((originalTrades: any) => {
           const tradesAfterUpdates = [data, ...(originalTrades || [])];
           // Trade

@@ -50,6 +50,10 @@
   --radius-DEFAULT: 0.75rem;
   --radius-card: 0.75rem;
   --shadow-card: 0 4px 24px hsl(222 84% 1% / 0.4);
+
+  
+
+  
 }
 
 /* One-off effects/gradients that don’t need utilities */
@@ -104,20 +108,24 @@
 
 /* Base element styles */
 * { @apply border-border; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth;
+ }
 body {
-  @apply bg-background text-foreground min-h-screen;
-  background: var(--gradient-hero);
+  @apply bg-[#060511] text-foreground min-h-screen;
+  
 }
 
+
+
+
 /* Custom utilities (v4) */
-@utility bg-gradient-primary { background: var(--gradient-primary); }
+/* @utility bg-gradient-primary { background: var(--gradient-primary); }
 @utility bg-gradient-hero { background: var(--gradient-hero); }
 @utility bg-gradient-card { background: var(--gradient-card); }
 
 @utility glow-primary { box-shadow: var(--shadow-glow); }
 @utility glow-success { box-shadow: var(--shadow-success); }
-@utility glow-danger { box-shadow: var(--shadow-danger); }
+@utility glow-danger { box-shadow: var(--shadow-danger); } */
 
 @utility crypto-card {
   @apply border border-border/20 backdrop-blur-sm transition-all duration-300;
@@ -143,6 +151,73 @@ body {
   background: var(--gradient-glow);
   animation: pulse-glow 4s ease-in-out infinite;
 }
+
+
+
+.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #fff;
+    box-shadow: 30px 0 0 #ff3d00;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #ff3d00;
+    box-shadow: 30px 0 0 #fff;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #ff3d00;
+    }
+    50% {
+      box-shadow: 0 0 0 #ff3d00;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #ff3d00;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #fff;
+    }
+    50% {
+      box-shadow: 0 0 0 #fff;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #fff;
+      margin-top: 0;
+    }
+  }
+  
+
+
 
 /* Keyframes */
 @keyframes pulse-glow {
@@ -194,3 +269,4 @@ body {
 @utility animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
 @utility animate-float-fast { animation: float-fast 4s ease-in-out infinite; }
 @utility price-flash { animation: price-flash 0.6s ease-out; }
+

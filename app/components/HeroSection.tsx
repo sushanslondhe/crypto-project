@@ -54,13 +54,13 @@ const HeroSection = () => {
         {/* Main Heading */}
         <div className="mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-            <span className=" bg-clip-text text-transparent">
+            <span className=" bg-clip-text ">
               Next-Gen
             </span>
             <br />
             <span className="text-foreground">Crypto Exchange</span>
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 ">
             Trade with confidence on the most advanced crypto platform. 
             Real-time data, lightning-fast execution, and institutional-grade security.
           </p>

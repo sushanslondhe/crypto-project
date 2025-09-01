@@ -92,22 +92,7 @@ export default function MarketBar({ market }: { market: string }) {
 function TickerC({ market }: { market: string }) {
   return (
     <div className="flex h-[60px] shrink-0 space-x-4">
-      <div className="   flex flex-row relative ml-2 -mr-4 items-center w-12">
-        <Image
-          src="/sol.webp"
-          alt="sol-icon"
-          height={100}
-          width={100}
-          className="w-6 h-6 relative z-10 "
-        />
-        <Image
-          src="/usdc.webp"
-          alt="usdc-icon"
-          height={100}
-          width={100}
-          className="w-6 h-6 absolute left-4 "
-        />
-      </div>
+  
       <button type="button" className="">
         <div className="flex items-center justify-between flex-row cursor-pointer rounded-lg p-3 hover:opacity-80">
           <div className="flex items-center flex-row gap-2 undefined">

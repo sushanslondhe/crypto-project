@@ -44,18 +44,9 @@ export function SwapUI({ market }: { market: string }) {
                     className="h-12 rounded-lg border-2 border-solid border-baseBorderLight bg-[var(--background)] pr-12 text-right text-2xl leading-9 text-[$text] placeholder-baseTextMedEmphasis ring-0 transition focus:border-accentBlue focus:ring-0"
                     type="text"
                     value="134.38"
+                    readOnly
                   />
-                  <div className="flex flex-row absolute right-1 top-1 p-2">
-                    <div className="relative">
-                      <Image
-                        src="/usdc.webp"
-                        width={100}
-                        height={100}
-                        className="w-6 h-6"
-                        alt=""
-                      />
-                    </div>
-                  </div>
+            
                 </div>
               </div>
             </div>
@@ -70,18 +61,9 @@ export function SwapUI({ market }: { market: string }) {
                   className="h-12 rounded-lg border-2 border-solid border-baseBorderLight bg-[var(--background)] pr-12 text-right text-2xl leading-9 text-[$text] placeholder-baseTextMedEmphasis ring-0 transition focus:border-accentBlue focus:ring-0"
                   type="text"
                   value="123"
+                  readOnly
                 />
-                <div className="flex flex-row absolute right-1 top-1 p-2">
-                  <div className="relative">
-                    <Image
-                      alt=""
-                      src="/sol.webp"
-                      width={100}
-                      height={100}
-                      className="w-6 h-6"
-                    />
-                  </div>
-                </div>
+              
               </div>
               <div className="flex justify-end flex-row">
                 <p className="font-medium pr-2 text-xs text-baseTextMedEmphasis">
@@ -105,7 +87,7 @@ export function SwapUI({ market }: { market: string }) {
             </div>
             <button
               type="button"
-              className="font-semibold  focus:ring-blue-200 focus:none focus:outline-none text-center h-12 rounded-xl text-base px-4 py-2 my-4 bg-greenPrimaryButtonBackground text-greenPrimaryButtonText active:scale-98"
+              className="font-semibold  focus:ring-blue-200 focus:none focus:outline-none text-center h-12 rounded-xl text-base px-4 py-2 my-4 bg-rgb(0,194,120)] text-greenPrimaryButtonText active:scale-98"
               data-rac=""
             >
               Buy
@@ -188,7 +170,7 @@ function BuyButton({
     <div
       className={`flex flex-col mb-[-2px] flex-1 cursor-pointer justify-center border-b-2 p-4 ${
         activeTab === "buy"
-          ? "border-b-greenBorder bg-greenBackgroundTransparent"
+          ? "border-b-greenBorder bg-[rgba(0,194,120,.12)]"
           : "border-b-baseBorderMed hover:border-b-baseBorderFocus"
       }`}
       onClick={() => setActiveTab("buy")}
@@ -209,7 +191,7 @@ function SellButton({
     <div
       className={`flex flex-col mb-[-2px] flex-1 cursor-pointer justify-center border-b-2 p-4 ${
         activeTab === "sell"
-          ? "border-b-redBorder bg-redBackgroundTransparent"
+          ? "border-b-redBorder bg-[rgba(234,56,59,.12)]"
           : "border-b-baseBorderMed hover:border-b-baseBorderFocus"
       }`}
       onClick={() => setActiveTab("sell")}

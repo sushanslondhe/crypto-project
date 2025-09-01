@@ -1,5 +1,5 @@
-import { Trade } from "@/app/utils/types";
-import { format } from "date-fns";
+import { Trade } from "@/utils/types";
+
 export const formatTime = (seconds: any) => {
   const years = Math.floor(seconds / (3600 * 24 * 365));
   seconds %= 3600 * 24 * 365;
@@ -24,10 +24,10 @@ export default function TradesTable({
 
   return (
     <div>
-      <div className=" overflow-y-scroll no-scrollbar flex flex-col gap-2">
-        {latestTrades.map((x) => (
+      <div className=" overflow-y-scroll  flex flex-col gap-2">
+        {latestTrades.map((x,i) => (
           <div
-            key={x.price}
+            key={i}
             className=" flex justify-between  items-start text-sm "
           >
             <div
@@ -38,7 +38,7 @@ export default function TradesTable({
               {x.price}
             </div>
             <div className=" text-slate-300">{x.quantity}</div>
-            <div className=" text-gray-500">{x.timestamp}</div>
+            <div className=" text-gray-500">{formatTime(x.timestamp)}</div>
           </div>
         ))}
       </div>
